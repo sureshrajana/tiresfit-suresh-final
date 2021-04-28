@@ -1,0 +1,6 @@
+p {
+  font-family: Lato;
+}
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+}

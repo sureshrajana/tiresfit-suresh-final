@@ -1,0 +1,86 @@
+<h3 style="font-size:1.5rem">
+  Find Tires For My Vehicle
+</h3>
+<br>
+<mat-horizontal-stepper linear id="stepper">
+
+
+
+  <mat-step label="Year">
+    <div class="links" *ngFor="let tyre of tyreList">
+
+      <div style="float:left;display:inline-block;height:50px;"
+        [ngStyle]="{'width': 'calc(1000% /' + tyreList.length + ')'}">
+        <span  style="display: inline-block;
+    border: 0.1rem solid #0C4192;padding: 0.2rem;"
+    (click)="tyreFun(tyre)">{{tyre}}</span>
+      </div>
+
+
+
+    </div>
+  </mat-step>
+
+  <mat-step #step2 label="Make">
+   <p style="color: #EB5F55;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 500;"> Vehicle: {{tyre}}</p>
+    <br/>
+    <br/>
+    <div *ngFor="let make of makeList">
+
+      <div style="float:left;display:inline-block;height:50px;"
+        [ngStyle]="{'width': 'calc(1000% /' + makeList.length + ')'}">
+        <span  style="display: inline-block;
+    border: 0.1rem solid #0C4192;padding: 0.2rem;" 
+     (click)="makeFun(make)">{{make}}</span>
+      </div>
+
+    </div>
+  </mat-step>
+  <mat-step #step3 label="Model">
+    <p style="color: #EB5F55;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 500;">Vehicle: {{tyre}},{{make}}</p>
+    <br/>
+    <br/>
+    <div *ngFor="let made of madeList">
+
+
+      <div style="float:left;display:inline-block;height:50px;"
+        [ngStyle]="{'width': 'calc(1000% /' + madeList.length + ')'}">
+
+
+        <span  style="display: inline-block;
+    border: 0.1rem solid #0C4192; padding: 0.2rem; padding: 0.2rem;" 
+         (click)="madeFun(made)">{{made}}</span>
+      </div>
+
+
+    </div>
+  </mat-step>
+  <mat-step #step4 label="Style">
+   <p style="color: #EB5F55;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 500;"> Vehicle: {{tyre}}, {{make}}, {{model}} </p>
+    <br/>
+    <br/>
+    <div *ngFor="let style of styleList">
+
+      <div style="float:left;display:inline-block;height:50px;"
+        [ngStyle]="{'width': 'calc(1000% /' + madeList.length + ')'}">
+       
+       
+        <span 
+        style="display: inline-block;
+    border: 0.1rem solid #0C4192;padding: 0.2rem;" 
+          (click)="styleFun(style)">{{style}}</span>
+      </div>
+    </div>
+    <button (click)="startover()"> start over</button>
+  </mat-step>
+
+</mat-horizontal-stepper>
